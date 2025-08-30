@@ -211,6 +211,17 @@ const SheConnectApp = () => {
             <Heart className="w-5 h-5 mx-auto mb-1" />
             <span className="text-xs">Wellness</span>
           </button>
+          <button
+            onClick={() => setActiveTab('pgsearch')}
+            className={`flex-1 py-4 px-2 text-center font-medium ${
+              activeTab === 'pgsearch' 
+                ? 'text-pink-600 border-b-2 border-pink-500 bg-pink-50' 
+                : 'text-gray-600 hover:text-pink-500'
+            }`}
+          >
+            <Home className="w-5 h-5 mx-auto mb-1" />
+            <span className="text-xs">PG Search</span>
+          </button>
         </div>
       </div>
 
@@ -582,6 +593,49 @@ const SheConnectApp = () => {
                 <div className="text-2xl mb-2">📞</div>
                 <span className="text-sm font-medium text-gray-700">Connect Counselor</span>
               </button>
+            </div>
+          </div>
+        )}
+
+        {/* PG Search Tab */}
+        {activeTab === 'pgsearch' && (
+          <div className="space-y-6">
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-pink-100">
+              <h2 className="text-lg font-semibold text-gray-800 mb-4">Find PG Accommodations</h2>
+              <p className="text-gray-600 mb-4">Search for safe and verified PG accommodations near you</p>
+              
+              <div className="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-6 mb-6">
+                <div className="text-center">
+                  <Home className="w-12 h-12 text-pink-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-medium text-gray-800 mb-2">Looking for PG Accommodations?</h3>
+                  <p className="text-gray-600 mb-4">We've created a dedicated page with advanced search features for finding safe PG accommodations.</p>
+                  <a 
+                    href="/pg-search" 
+                    className="inline-block bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 px-6 rounded-lg transition-colors"
+                  >
+                    Go to PG Search Page
+                  </a>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-pink-50 rounded-lg p-4">
+                  <h4 className="font-medium text-pink-800 mb-2">Verified Listings</h4>
+                  <p className="text-sm text-pink-600">Find accommodations that have been verified for safety and quality</p>
+                </div>
+                <div className="bg-purple-50 rounded-lg p-4">
+                  <h4 className="font-medium text-purple-800 mb-2">Location Based</h4>
+                  <p className="text-sm text-purple-600">Search by city, area, or landmark to find nearby options</p>
+                </div>
+                <div className="bg-rose-50 rounded-lg p-4">
+                  <h4 className="font-medium text-rose-800 mb-2">Safety First</h4>
+                  <p className="text-sm text-rose-600">Filter by safety features like security guards, CCTV, and gated access</p>
+                </div>
+                <div className="bg-blue-50 rounded-lg p-4">
+                  <h4 className="font-medium text-blue-800 mb-2">Community Focused</h4>
+                  <p className="text-sm text-blue-600">Find PGs with community events and activities for residents</p>
+                </div>
+              </div>
             </div>
           </div>
         )}

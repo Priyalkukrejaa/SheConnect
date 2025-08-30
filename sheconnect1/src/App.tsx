@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import SheConnectApp from './SheConnectApp';
 import TicketList from './components/TicketList';
+import PgLocationSearch from './pages/PgLocationSearch';
 
 const App = () => {
   useEffect(() => {
@@ -20,8 +22,12 @@ const App = () => {
 
   return (
     <div>
-      <SheConnectApp />
-      <TicketList />
+      <Routes>
+        <Route path="/" element={<SheConnectApp />} />
+        <Route path="/pg-search" element={<PgLocationSearch />} />
+        <Route path="/tickets" element={<TicketList />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
     </div>
   );
 };
